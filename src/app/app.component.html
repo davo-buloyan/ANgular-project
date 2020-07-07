@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <nav>
+    <a routerLink="home-component" routerLinkActive="active">Home</a>
+    <a routerLink="about-component">About</a>
+    <a routerLink="dashboard-component">Dashboard</a>
+    <!--  -->
+    <!--  -->
+    <button (click)="routTo()">go to home</button>
+
+  </nav>
+  <router-outlet></router-outlet>
+</div>
