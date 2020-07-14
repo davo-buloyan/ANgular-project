@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+* {background-color: rgb(226, 186, 186)}
+
+a, button   {
+    color: black;
+    border: 2px solid;
+    border-radius: 10%;
+    padding: 10px;
+    margin: 20px;
+    text-decoration: none;
+}
+
+
+
+a:hover, button:hover {
+  color: #ff7a59;
+  border: #ff7a59 solid 1px;
+  background:#fff;
+  }
