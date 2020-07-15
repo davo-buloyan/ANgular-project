@@ -10,7 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable, throwError, from } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { UserService } from './services/user.service'
+import { UserService } from './services/user.service';
+import { ReactiveFormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UserService } from './services/user.service'
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserService
