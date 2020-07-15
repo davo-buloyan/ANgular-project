@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-* {background-color: rgb(186, 226, 189)}
+/** {background-color: rgb(186, 226, 189)}*/
 
 a, button   {
     color: black;

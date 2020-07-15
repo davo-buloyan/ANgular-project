@@ -1,0 +1,6 @@
+.main-container {
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid greenyellow;
+  min-height: 80vh;
+}

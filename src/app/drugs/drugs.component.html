@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div class="card-deck">
+
+    <div class="card border-dark" *ngFor="let item of weeds">
+      <img class="card-img-top" [src]="item.imgSrc" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{item.type}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <p class="card-text"><small class="text-muted">THC {{item.thc}} %</small></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
