@@ -1,0 +1,13 @@
+.third {
+    width: 600px;
+    height: 600px;
+    border: black solid;
+    background-color: cyan;
+}
+
+.red {
+    width: 600px;
+    height: 600px;
+    border: black solid;
+    background-color: red;
+}

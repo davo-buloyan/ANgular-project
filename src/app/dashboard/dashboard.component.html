@@ -1,1 +1,103 @@
-<p>dashboard works!</p>
+
+<div class="container table-congtainer">
+
+    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+      <div class="form-group">
+        <label>id</label>
+        <input class="form-control" name="email" formControlName="id" />
+         
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['id'].invalid && myForm.controls['id'].touched">
+            id
+        </div>
+    </div>
+  
+      <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" name="email" formControlName="email" />
+         
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
+            email
+        </div>
+    </div>
+      
+      <div class="form-group">
+        <label>Firstname</label>
+        <input class="form-control" name="name" formControlName="first_name" />
+         
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['first_name'].invalid && myForm.controls['first_name'].touched">
+            Add the Firstname!
+        </div>
+    </div>
+  
+      <div class="form-group">
+        <label>Lastname</label>
+        <input class="form-control" name="name" formControlName="last_name" />
+         
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['last_name'].invalid && myForm.controls['last_name'].touched">
+            Add the Lastname!
+        </div>
+    </div>    
+      
+    <div class="form-group">
+      <label>Avatar</label>
+      <input class="form-control" name="name" formControlName="avatar" />
+       
+      <div class="alert alert-danger"
+          *ngIf="myForm.controls['avatar'].invalid && myForm.controls['avatar'].touched">
+          Add the Avatar!
+      </div>
+    </div>
+      <div class="form-group">
+          <!-- <button class="btn btn-default" (click)="addPhone()">
+              Add
+          </button> -->
+          <!-- <button class="btn btn-default" [disabled]="myForm.invalid">
+              Add
+          </button> -->
+          <button class="btn btn-default" type="submit" (click)=save()>
+              Save
+          </button>
+  
+          <!-- <button class="btn btn-default" type="submit" >
+            Edit
+        </button> -->
+      </div>
+  </form>  
+  
+  
+    <table class=" table table " *ngIf="ItemsArray">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Email</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Avatar</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Edit</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+  
+        <tr *ngFor="let item of ItemsArray; let i=index" >  
+          <th>{{ item.id }}</th>
+          <td>{{ item.email }}</td>
+          <td>{{ item.first_name }}</td>
+          <td>{{ item.last_name }}</td>
+          <td>{{ item.avatar }}</td>
+          <td><button id="remove" (click)="deleteRow()">Delete</button></td>
+          <td><button class="edit" (click)="editRow(i)" >  Edit </button></td>
+          
+          <td>
+        </tr>
+       
+      </tbody>
+    </table> 
+  
+  </div>
+  

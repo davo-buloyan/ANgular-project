@@ -6,115 +6,11 @@
     <a routerLink="home-component" routerLinkActive="active">Home</a>
     <a routerLink="about-component">About</a>
     <a routerLink="dashboard-component">Dashboard</a>
-    <!--  -->
+    
     <button (click)="routTo()">go to home</button>
 
   </nav>
+
   
   <router-outlet></router-outlet>
 </div>
-
-
-
-
-<div class="container table-congtainer">
-
-  <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
-
-    <div class="form-group">
-      <label>id</label>
-      <input class="form-control" name="email" formControlName="id" />
-       
-      <div class="alert alert-danger"
-          *ngIf="myForm.controls['id'].invalid && myForm.controls['id'].touched">
-          id
-      </div>
-  </div>
-
-    <div class="form-group">
-      <label>Email</label>
-      <input class="form-control" name="email" formControlName="email" />
-       
-      <div class="alert alert-danger"
-          *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
-          email
-      </div>
-  </div>
-    
-    <div class="form-group">
-      <label>Firstname</label>
-      <input class="form-control" name="name" formControlName="first_name" />
-       
-      <div class="alert alert-danger"
-          *ngIf="myForm.controls['first_name'].invalid && myForm.controls['first_name'].touched">
-          Add the Firstname!
-      </div>
-  </div>
-
-    <div class="form-group">
-      <label>Lastname</label>
-      <input class="form-control" name="name" formControlName="last_name" />
-       
-      <div class="alert alert-danger"
-          *ngIf="myForm.controls['last_name'].invalid && myForm.controls['last_name'].touched">
-          Add the Lastname!
-      </div>
-  </div>    
-    
-  <div class="form-group">
-    <label>Avatar</label>
-    <input class="form-control" name="name" formControlName="avatar" />
-     
-    <div class="alert alert-danger"
-        *ngIf="myForm.controls['avatar'].invalid && myForm.controls['avatar'].touched">
-        Add the Avatar!
-    </div>
-  </div>
-    <div class="form-group">
-        <!-- <button class="btn btn-default" (click)="addPhone()">
-            Add
-        </button> -->
-        <!-- <button class="btn btn-default" [disabled]="myForm.invalid">
-            Add
-        </button> -->
-        <button class="btn btn-default" type="submit">
-            Add
-        </button>
-    </div>
-</form>
-  
- 
-
-  <table class=" table table " *ngIf="ItemsArray">
-    <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">Email</th>
-        <th scope="col">Firstname</th>
-        <th scope="col">Lastname</th>
-        <th scope="col">Avatar</th>
-      </tr>
-    </thead>
-    <tbody>
-
-      <tr *ngFor="let item of ItemsArray; let i=index" >
-        <th>{{ item.id }}</th>
-        <td>{{ item.email }}</td>
-        <td>{{ item.first_name }}</td>
-        <td>{{ item.last_name }}</td>
-        <td>{{ item.avatar }}</td>
-        <button id="remove" (click)="deleteRow(i)">DELETE ROW</button>
-        <td>
-      </tr>
-     
-    </tbody>
-  </table> 
-
-</div>
-
-
- 
-
-
-
-

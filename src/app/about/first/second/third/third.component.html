@@ -1,0 +1,13 @@
+<div class="third" [ngStyle]="{'background-color': isActiv ? 'green' : 'red'}">
+
+    <button (click)="changeParentFirst()">
+        First to change
+    </button>
+    <button (click)="changeParentSecond()">
+        Second to change
+    </button>
+    <button (click)="isActiv = !isActiv">
+        Third to change
+    </button>
+    
+</div>

@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 * {background-color: rgb(186, 226, 189)}
 
+*{
+  box-sizing: border-box;
+}
+
+nav {
+  padding: 20px;
+}
+
 a, button   {
     color: black;
     border: 2px solid;
@@ -10,10 +18,10 @@ a, button   {
     text-decoration: none;
 }
 
-
-
 a:hover, button:hover {
   color: #ff7a59;
   border: #ff7a59 solid 1px;
   background:#fff;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

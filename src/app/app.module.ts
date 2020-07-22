@@ -12,6 +12,11 @@ import { Observable, throwError, from } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { UserService } from './services/user.service';
 import { ReactiveFormsModule }   from '@angular/forms';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FirstComponent } from './about/first/first.component';
+import { SecondComponent } from './about/first/second/second.component';
+import { ThirdComponent } from './about/first/second/third/third.component';
 
 
 @NgModule({
@@ -20,16 +25,22 @@ import { ReactiveFormsModule }   from '@angular/forms';
     HomeComponent,
     AboutComponent,
     DashboardComponent,
+    MatConfirmDialogComponent,
+    FirstComponent,
+    SecondComponent,
+    ThirdComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [
     UserService
   ],
+  entryComponents: [MatConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

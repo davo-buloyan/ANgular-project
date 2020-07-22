@@ -1,0 +1,3 @@
+<div class="second" [ngStyle]="{'background-color': isActiv ? 'green' : 'red'}">
+    <app-third (secondToChange)='abulik($event)' (firstToChange)="changeFirst($event)" ></app-third>
+</div>
