@@ -1,13 +1,17 @@
 <div class="third" [ngStyle]="{'background-color': isActiv ? 'green' : 'red'}">
 
-    <button (click)="changeParentFirst()">
+    <button (click)="changeParentFirst()" (click)="firstValChange()">
         First to change
     </button>
-    <button (click)="changeParentSecond()">
+    <button (click)="changeParentSecond()" (click)="secondValueChange()">
         Second to change
     </button>
-    <button (click)="isActiv = !isActiv">
+    <button (click)="isActiv = !isActiv" (click)="valueChange()">
         Third to change
     </button>
-    
+
+    <p>{{count}}</p>
+
+    <br>
+
 </div>

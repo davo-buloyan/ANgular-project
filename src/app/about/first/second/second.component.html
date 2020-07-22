@@ -1,3 +1,10 @@
 <div class="second" [ngStyle]="{'background-color': isActiv ? 'green' : 'red'}">
-    <app-third (secondToChange)='abulik($event)' (firstToChange)="changeFirst($event)" ></app-third>
+    <app-third 
+    (secondToChange)='abulik($event)' 
+    (firstToChange)="changeFirst($event)" 
+    (secondValueToChange)='countPlus($event)'
+    (firstCountToChange)='firstCountPlus($event)'
+
+    ></app-third>
+    <p>{{count}}</p>
 </div>

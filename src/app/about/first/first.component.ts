@@ -12,6 +12,9 @@ export class FirstComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  count = 0;
+
   @Input() isActive: boolean;
 
   isActiv = false
@@ -20,6 +23,11 @@ export class FirstComponent implements OnInit {
   abulik(event){
     this.isActiv=event
     console.log(event)
+  }
+
+  countPlus(event) {
+    this.count = event
+    console.log(event);
   }
 
 

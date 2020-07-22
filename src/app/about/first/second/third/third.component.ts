@@ -12,10 +12,19 @@ export class ThirdComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  count = 0;
+  secondCount = 0;
+  firstCount = 0;
+
+  valueChange(){
+    this.count ++ ;
+  }
 
   @Input() isActive: boolean;
   @Output() secondToChange = new EventEmitter()
   @Output() firstToChange = new EventEmitter()
+  @Output() secondValueToChange = new EventEmitter()
+  @Output() firstCountToChange = new EventEmitter()
   
   isActiv = true
   changeParentSecond(){
@@ -23,9 +32,18 @@ export class ThirdComponent implements OnInit {
     this.secondToChange.emit(status)
   }
 
+  secondValueChange(){
+    ++this.secondCount;
+    this.secondValueToChange.emit(this.secondCount)    
+  }
+
+  firstValChange(){
+    ++this.firstCount;
+    this.firstCountToChange.emit(this.firstCount)    
+  }
+
   changeParentFirst(){
     const status = this.status = !this.status
     this.firstToChange.emit(status)
-  }
-  
+  }  
 }
