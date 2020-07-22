@@ -1,0 +1,14 @@
+<div class="card border-dark">
+  <img class="card-img-top" [src]="weed.imgSrc" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{weed.type}}</h5>
+    <p class="card-text">{{weed.description}}</p>
+    <p class="card-text"><small class="text-muted">THC {{weed.thc}} %</small></p>
+  </div>
+  <!-- Actions -->
+  <div class="card-footer bg-transparent">
+    <button class="btn-danger" (click)="onDelete()">Delete</button>
+    <button class="btn-primary" (click)="onEdit()">Edit</button>
+    <button class="btn-secondary" (click)="onShuffle()">Shuffle</button>
+  </div>
+</div>

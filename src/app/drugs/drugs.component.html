@@ -2,15 +2,50 @@
 
   <div class="card-deck">
 
-    <div class="card border-dark" *ngFor="let item of weeds">
-      <img class="card-img-top" [src]="item.imgSrc" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{item.type}}</h5>
-        <p class="card-text">{{item.description}}</p>
-        <p class="card-text"><small class="text-muted">THC {{item.thc}} %</small></p>
-      </div>
+    <div *ngFor="let weed of weeds">
+      <app-weed-card
+        [weed]="weed"
+        (delete)="deleteItem($event)"
+        (edit)="editItem($event)"
+        (shuffle)="shuffleList()">
+      </app-weed-card>
     </div>
 
   </div>
 
+</div>
+
+<button #modalOpenerBtn type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div *ngIf="selectedItem" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form action="">
+          <div class="form-group">
+            <label for="desc" class="">Description</label>
+            <textarea id="desc" type="text" class="form-control form-control-sm"
+                   name="description"
+                   [(ngModel)]="selectedItem.description">
+            </textarea>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
 </div>
