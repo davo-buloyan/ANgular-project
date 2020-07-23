@@ -51,23 +51,12 @@
           Add the Avatar!
       </div>
     </div>
-      <div class="form-group">
-          <!-- <button class="btn btn-default" (click)="addPhone()">
-              Add
-          </button> -->
-          <!-- <button class="btn btn-default" [disabled]="myForm.invalid">
-              Add
-          </button> -->
-          <button class="btn btn-default" type="submit" (click)=save()>
-              Save
+      <div class="form-group">          
+          <button class="btn btn-success" type="submit" (click)=save()>
+              Save 
           </button>
-  
-          <!-- <button class="btn btn-default" type="submit" >
-            Edit
-        </button> -->
       </div>
-  </form>  
-  
+  </form>
   
     <table class=" table table " *ngIf="ItemsArray">
       <thead>
@@ -78,8 +67,7 @@
           <th scope="col">Lastname</th>
           <th scope="col">Avatar</th>
           <th scope="col">Delete</th>
-          <th scope="col">Edit</th>
-          
+          <th scope="col">Edit</th>          
         </tr>
       </thead>
       <tbody>
@@ -90,14 +78,29 @@
           <td>{{ item.first_name }}</td>
           <td>{{ item.last_name }}</td>
           <td>{{ item.avatar }}</td>
-          <td><button id="remove" (click)="deleteRow()">Delete</button></td>
-          <td><button class="edit" (click)="editRow(i)" >  Edit </button></td>
-          
+          <td><button class="btn btn-danger" (click)="heyYou(i)" id="remove" #modalOpenerBtn data-toggle="modal" data-target="#exampleModalCenter" >Delete</button></td>
+          <td><button class="edit btn-primary" (click)="editRow(i)" >  Edit </button></td>
           <td>
         </tr>
-       
       </tbody>
-    </table> 
-  
+    </table>  
   </div>
   
+<button #modalOpenerBtn type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <label for="">You wnat to delete</label>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-danger btn-ok"(click)="deleteRow(deleteIndex)" data-dismiss="modal" >Delete</a>
+        </div>
+    </div>
+  </div>
+</div>
